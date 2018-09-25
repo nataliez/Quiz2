@@ -2,6 +2,7 @@ package pkgCar;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import org.junit.jupiter.api.Test;
 
 class BuyCarTest {
@@ -12,9 +13,10 @@ class BuyCarTest {
 			double loanLength1 = 60.0;
 			double downPayment1 = 35000.0;
 			double expected1 = 743.65;
-
-			assertEquals(expected1, pkgCar.BuyCar.monthlyPayment(interestRate1, loanLength1, downPayment1));
+			System.out.println(pkgCar.BuyCar.monthlyPayment(interestRate1, loanLength1, downPayment1));
+			assertTrue (expected1 ==  Math.round((pkgCar.BuyCar.monthlyPayment(interestRate1, loanLength1, downPayment1))*100) / 100d);
 			}
+	
 	@Test
 	public void totalInterestTest1() {
 		double interestRate1 = 10.0;
@@ -22,7 +24,9 @@ class BuyCarTest {
 		double downPayment1 = 35000.0;
 		double expected2 = 9618.79;
 		
-		assertEquals(expected2, pkgCar.BuyCar.totalInterest(interestRate1, loanLength1, downPayment1));
+		System.out.println(pkgCar.BuyCar.totalInterest(interestRate1, loanLength1, downPayment1));
+		
+		assertTrue(expected2 == Math.round((pkgCar.BuyCar.totalInterest(interestRate1, loanLength1, downPayment1))*100) / 100d);
 		
 	}
 
