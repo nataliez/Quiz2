@@ -10,6 +10,6 @@ public class BuyCar {
 		
 	public static double totalInterest(double interestRate, double loanLength, double downPayment) {
 		double i = interestRate / loanLength;
-		return i * downPayment;
+		return (i * downPayment);
 		}
 }
